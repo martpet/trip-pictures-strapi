@@ -1,0 +1,42 @@
+{
+  "key": "model_def_application::photos.photos",
+  "value": {
+    "uid": "application::photos.photos",
+    "collectionName": "photos",
+    "kind": "collectionType",
+    "info": {
+      "name": "Photos",
+      "description": ""
+    },
+    "options": {
+      "increments": true,
+      "timestamps": [
+        "created_at",
+        "updated_at"
+      ],
+      "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+      "created_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      },
+      "updated_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

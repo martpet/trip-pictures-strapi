@@ -1,0 +1,91 @@
+{
+  "env": {
+    "browser": false,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "eslint:recommended",
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "strapi": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "requireConfigFile": false,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "simple-import-sort",
+    "prettier",
+    "react-hooks",
+    "json-format"
+  ],
+  "rules": {
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
+    "import/extensions": 0,
+    "import/prefer-default-export": 0,
+    "jsx-a11y/anchor-is-valid": [
+      2,
+      {
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ],
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "hrefLeft",
+          "hrefRight"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "assert": "either"
+      }
+    ],
+    "no-param-reassign": 0,
+    "prettier/prettier": [
+      2,
+      {},
+      {
+        "usePrettierrc": true
+      }
+    ],
+    "react-hooks/exhaustive-deps": 0,
+    "react/jsx-newline": 1,
+    "react/jsx-no-undef": [
+      2,
+      {
+        "allowGlobals": true
+      }
+    ],
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-sort-props": 1,
+    "react/react-in-jsx-scope": 0,
+    "simple-import-sort/exports": 2,
+    "simple-import-sort/imports": 2,
+    "no-new": 0
+  },
+  "settings": {
+    "json/json-with-comments-files": [],
+    "json/sort-package-json": "pro"
+  }
+}

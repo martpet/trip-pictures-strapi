@@ -1,0 +1,69 @@
+{
+  "name": "trip-pictures-strapi",
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "private": true,
+  "scripts": {
+    "build": "strapi build --no-optimization",
+    "develop": "strapi develop",
+    "preinstall": "npx npm-force-resolutions",
+    "prepare": "husky install",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "test": "eslint ./ --ext .js,.jsx --quiet --ignore-path ./.gitignore"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.45.0",
+    "@aws-sdk/s3-presigned-post": "^3.45.0",
+    "aws-sdk": "^2.1048.0",
+    "i": "^0.3.7",
+    "knex": "0.21.18",
+    "npm": "^8.3.0",
+    "pg": "8.5.1",
+    "pg-connection-string": "^2.5.0",
+    "strapi": "3.6.8",
+    "strapi-admin": "3.6.8",
+    "strapi-connector-bookshelf": "3.6.8",
+    "strapi-plugin-config-sync": "^0.1.6",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-i18n": "3.6.8",
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-utils": "3.6.8"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.16.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.0.1",
+    "stylelint-config-recess-order": "^2.5.0",
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-order": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "resolutions": {
+    "redis": "3.1.2"
+  },
+  "strapi": {
+    "uuid": "9f874d46-bf2d-4206-a8a8-bc4c384cf94d"
+  }
+}

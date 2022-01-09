@@ -1,0 +1,53 @@
+{
+  "key": "model_def_application::photo.photo",
+  "value": {
+    "uid": "application::photo.photo",
+    "collectionName": "photos",
+    "kind": "collectionType",
+    "info": {
+      "name": "Photo",
+      "description": ""
+    },
+    "options": {
+      "increments": true,
+      "timestamps": [
+        "created_at",
+        "updated_at"
+      ],
+      "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+      "user": {
+        "plugin": "users-permissions",
+        "model": "user",
+        "via": "photos"
+      },
+      "s3key": {
+        "type": "string",
+        "required": true,
+        "unique": true,
+        "private": false
+      },
+      "created_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      },
+      "updated_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

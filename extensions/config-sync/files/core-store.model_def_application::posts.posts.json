@@ -1,0 +1,50 @@
+{
+  "key": "model_def_application::posts.posts",
+  "value": {
+    "uid": "application::posts.posts",
+    "collectionName": "posts",
+    "kind": "collectionType",
+    "info": {
+      "name": "posts"
+    },
+    "options": {
+      "increments": true,
+      "timestamps": [
+        "created_at",
+        "updated_at"
+      ],
+      "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+      "body": {
+        "type": "text"
+      },
+      "published_at": {
+        "type": "datetime",
+        "configurable": false,
+        "writable": true,
+        "visible": false
+      },
+      "created_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      },
+      "updated_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

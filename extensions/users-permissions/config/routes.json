@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "method": "PUT",
+      "path": "/users/me/settings",
+      "handler": "User.saveMySettings",
+      "config": {
+        "policies": [],
+        "prefix": ""
+      }
+    }
+  ]
+}

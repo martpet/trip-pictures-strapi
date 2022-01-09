@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photos",
+  "info": {
+    "name": "Photo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "photos"
+    },
+    "s3key": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "private": false
+    }
+  }
+}
