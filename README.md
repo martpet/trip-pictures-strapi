@@ -5,13 +5,14 @@
 ## How to run
 
 ### Database
-- Create a PostgreSQL database named *trip-pictures* without username and password.
+- Create a PostgreSQL database named *trip-pictures* without a password.
 
 ### npm deps
 - `npm install`
 
 ### Env vars
-- Copy *.env.example* as *.env*
+- Copy *.env.example* as *.env*,
+- ask for AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
 
 ### Dev server
 - Start it with `npm run develop`

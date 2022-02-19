@@ -495,7 +495,7 @@
             "enabled": false,
             "policy": ""
           },
-          "generateuploadurl": {
+          "generateuploadurls": {
             "enabled": false,
             "policy": ""
           },

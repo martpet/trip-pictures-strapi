@@ -8,20 +8,34 @@ module.exports = {
       ...ctx.request.body,
       user: ctx.state.user.id,
     });
+
     return sanitizeEntity(entity, { model: strapi.models.photo });
   },
 
-  async generateUploadUrl(ctx) {
+  async generateUploadUrls(ctx) {
     const { user } = ctx.state;
-    const s3 = new S3Client({ region: 'eu-central-1' });
-    const data = await createPresignedPost(s3, {
-      Bucket: process.env.S3_UPLOAD_BUCKET,
-      Key: `${user.id}-${new Date().toISOString()}.jpg`,
-      Fields: {
-        'Content-Type': 'image/jpeg',
+    const { uploadsSize } = ctx.request.body;
+    const result = [];
+
+    const s3 = new S3Client({
+      region: 'eu-central-1',
+      credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
       },
-      Conditions: [['content-length-range', 0, 50 * 1024 * 1024]],
     });
-    return data;
+
+    for (let i = 0; i < uploadsSize; i++) {
+      result.push(
+        createPresignedPost(s3, {
+          Bucket: process.env.S3_UPLOAD_BUCKET,
+          Key: `${user.id}--${new Date().toISOString()}--${i + 1}.jpg`,
+          Fields: { 'Content-Type': 'image/jpeg' },
+          Conditions: [['content-length-range', 0, 50 * 1024 * 1024]],
+        }),
+      );
+    }
+
+    return Promise.all(result);
   },
 };

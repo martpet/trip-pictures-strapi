@@ -50,8 +50,8 @@
     },
     {
       "method": "POST",
-      "path": "/photos/generate-upload-url",
-      "handler": "photo.generateUploadUrl",
+      "path": "/photos/generate-photo-upload-urls",
+      "handler": "photo.generateUploadUrls",
       "config": {
         "policies": []
       }
