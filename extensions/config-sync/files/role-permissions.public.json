@@ -3,148 +3,10 @@
   "description": "Default role given to unauthenticated user.",
   "type": "public",
   "permissions": {
-    "content-manager": {
+    "users-permissions": {
       "controllers": {
-        "content-types": {
-          "findcontenttypessettings": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findcontenttypes": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatecontenttypeconfiguration": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findcontenttypeconfiguration": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "collection-types": {
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "bulkdelete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "update": {
-            "enabled": false,
-            "policy": ""
-          },
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "publish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "previewmanyrelations": {
-            "enabled": false,
-            "policy": ""
-          },
-          "unpublish": {
-            "enabled": false,
-            "policy": ""
-          },
+        "user": {
           "create": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "single-types": {
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "publish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "unpublish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createorupdate": {
-            "enabled": false,
-            "policy": ""
-          },
-          "find": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "components": {
-          "findcomponents": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findcomponentconfiguration": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatecomponentconfiguration": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "uid": {
-          "checkuidavailability": {
-            "enabled": false,
-            "policy": ""
-          },
-          "generateuid": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "relations": {
-          "find": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {
-        "description": {
-          "short": "Quick way to see, edit and delete the data in your database.",
-          "long": "Quick way to see, edit and delete the data in your database."
-        },
-        "id": "content-manager",
-        "icon": "plug",
-        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-content-manager/admin/src/assets/images/logo.svg?sanitize=true",
-        "isCompatible": true,
-        "name": "Content Manager",
-        "price": 0,
-        "ratings": 5,
-        "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "upload": {
-      "controllers": {
-        "upload": {
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatesettings": {
-            "enabled": false,
-            "policy": ""
-          },
-          "search": {
             "enabled": false,
             "policy": ""
           },
@@ -152,100 +14,19 @@
             "enabled": false,
             "policy": ""
           },
+          "update": {
+            "enabled": false,
+            "policy": ""
+          },
           "destroy": {
             "enabled": false,
             "policy": ""
           },
-          "getsettings": {
-            "enabled": false,
-            "policy": ""
-          },
-          "upload": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {
-        "description": {
-          "short": "Media file management.",
-          "long": "Media file management."
-        },
-        "id": "upload",
-        "icon": "cloud-upload-alt",
-        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-upload/admin/src/assets/images/logo.svg?sanitize=true",
-        "isCompatible": true,
-        "name": "Media Library",
-        "price": 0,
-        "ratings": 5,
-        "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "config-sync": {
-      "controllers": {
-        "config": {
-          "exportall": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getdiff": {
-            "enabled": false,
-            "policy": ""
-          },
-          "importall": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {}
-    },
-    "users-permissions": {
-      "controllers": {
-        "auth": {
-          "forgotpassword": {
-            "enabled": true,
-            "policy": ""
-          },
-          "emailconfirmation": {
-            "enabled": true,
-            "policy": ""
-          },
-          "register": {
-            "enabled": true,
-            "policy": ""
-          },
-          "sendemailconfirmation": {
-            "enabled": false,
-            "policy": ""
-          },
-          "callback": {
-            "enabled": true,
-            "policy": ""
-          },
-          "resetpassword": {
-            "enabled": true,
-            "policy": ""
-          },
-          "connect": {
-            "enabled": true,
-            "policy": ""
-          }
-        },
-        "user": {
           "find": {
             "enabled": false,
             "policy": ""
           },
-          "destroy": {
-            "enabled": false,
-            "policy": ""
-          },
           "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "me": {
             "enabled": false,
             "policy": ""
           },
@@ -257,25 +38,43 @@
             "enabled": false,
             "policy": ""
           },
-          "update": {
-            "enabled": false,
-            "policy": ""
-          },
-          "create": {
-            "enabled": false,
-            "policy": ""
-          },
-          "count": {
+          "me": {
             "enabled": false,
             "policy": ""
           }
         },
-        "userspermissions": {
-          "getpermissions": {
+        "auth": {
+          "connect": {
+            "enabled": true,
+            "policy": ""
+          },
+          "resetpassword": {
+            "enabled": true,
+            "policy": ""
+          },
+          "forgotpassword": {
+            "enabled": true,
+            "policy": ""
+          },
+          "emailconfirmation": {
+            "enabled": true,
+            "policy": ""
+          },
+          "sendemailconfirmation": {
             "enabled": false,
             "policy": ""
           },
-          "updateadvancedsettings": {
+          "callback": {
+            "enabled": true,
+            "policy": ""
+          },
+          "register": {
+            "enabled": true,
+            "policy": ""
+          }
+        },
+        "userspermissions": {
+          "getproviders": {
             "enabled": false,
             "policy": ""
           },
@@ -283,11 +82,11 @@
             "enabled": false,
             "policy": ""
           },
-          "updateemailtemplate": {
+          "createrole": {
             "enabled": false,
             "policy": ""
           },
-          "createrole": {
+          "searchusers": {
             "enabled": false,
             "policy": ""
           },
@@ -295,11 +94,19 @@
             "enabled": false,
             "policy": ""
           },
-          "updateproviders": {
+          "getpermissions": {
             "enabled": false,
             "policy": ""
           },
-          "getproviders": {
+          "deleterole": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updateadvancedsettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updateemailtemplate": {
             "enabled": false,
             "policy": ""
           },
@@ -311,27 +118,23 @@
             "enabled": false,
             "policy": ""
           },
-          "getpolicies": {
-            "enabled": false,
-            "policy": ""
-          },
-          "searchusers": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getadvancedsettings": {
-            "enabled": false,
-            "policy": ""
-          },
-          "deleterole": {
-            "enabled": false,
-            "policy": ""
-          },
           "index": {
             "enabled": false,
             "policy": ""
           },
           "updaterole": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updateproviders": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getpolicies": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getadvancedsettings": {
             "enabled": false,
             "policy": ""
           }
@@ -352,32 +155,144 @@
         "registry": "https://registry.npmjs.org/"
       }
     },
-    "content-type-builder": {
+    "content-manager": {
       "controllers": {
-        "contenttypes": {
-          "getcontenttypes": {
+        "single-types": {
+          "delete": {
             "enabled": false,
             "policy": ""
           },
-          "createcontenttype": {
+          "find": {
             "enabled": false,
             "policy": ""
           },
-          "updatecontenttype": {
+          "createorupdate": {
             "enabled": false,
             "policy": ""
           },
-          "getcontenttype": {
+          "unpublish": {
             "enabled": false,
             "policy": ""
           },
-          "deletecontenttype": {
+          "publish": {
             "enabled": false,
             "policy": ""
           }
         },
         "components": {
+          "findcomponentconfiguration": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findcomponents": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecomponentconfiguration": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "collection-types": {
+          "previewmanyrelations": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
+          },
+          "unpublish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "publish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "update": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findone": {
+            "enabled": false,
+            "policy": ""
+          },
+          "bulkdelete": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "relations": {
+          "find": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "uid": {
+          "generateuid": {
+            "enabled": false,
+            "policy": ""
+          },
+          "checkuidavailability": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "content-types": {
+          "findcontenttypessettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findcontenttypes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecontenttypeconfiguration": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findcontenttypeconfiguration": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {
+        "description": {
+          "short": "Quick way to see, edit and delete the data in your database.",
+          "long": "Quick way to see, edit and delete the data in your database."
+        },
+        "id": "content-manager",
+        "icon": "plug",
+        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-content-manager/admin/src/assets/images/logo.svg?sanitize=true",
+        "isCompatible": true,
+        "name": "Content Manager",
+        "price": 0,
+        "ratings": 5,
+        "registry": "https://registry.npmjs.org/"
+      }
+    },
+    "content-type-builder": {
+      "controllers": {
+        "components": {
+          "updatecomponent": {
+            "enabled": false,
+            "policy": ""
+          },
           "getcomponent": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcomponents": {
             "enabled": false,
             "policy": ""
           },
@@ -388,12 +303,36 @@
           "createcomponent": {
             "enabled": false,
             "policy": ""
-          },
-          "updatecomponent": {
+          }
+        },
+        "componentcategories": {
+          "editcategory": {
             "enabled": false,
             "policy": ""
           },
-          "getcomponents": {
+          "deletecategory": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "contenttypes": {
+          "deletecontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcontenttypes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createcontenttype": {
             "enabled": false,
             "policy": ""
           }
@@ -406,16 +345,6 @@
         },
         "builder": {
           "getreservednames": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "componentcategories": {
-          "deletecategory": {
-            "enabled": false,
-            "policy": ""
-          },
-          "editcategory": {
             "enabled": false,
             "policy": ""
           }
@@ -438,24 +367,6 @@
     },
     "i18n": {
       "controllers": {
-        "locales": {
-          "deletelocale": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatelocale": {
-            "enabled": false,
-            "policy": ""
-          },
-          "listlocales": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createlocale": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
         "content-types": {
           "getnonlocalizedattributes": {
             "enabled": false,
@@ -464,6 +375,24 @@
         },
         "iso-locales": {
           "listisolocales": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "locales": {
+          "listlocales": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatelocale": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createlocale": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletelocale": {
             "enabled": false,
             "policy": ""
           }
@@ -487,15 +416,7 @@
     "application": {
       "controllers": {
         "photo": {
-          "update": {
-            "enabled": false,
-            "policy": ""
-          },
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "generateuploadurls": {
+          "createpresigneduploadurls": {
             "enabled": false,
             "policy": ""
           },
@@ -507,25 +428,85 @@
             "enabled": false,
             "policy": ""
           },
+          "count": {
+            "enabled": false,
+            "policy": ""
+          },
           "findone": {
             "enabled": false,
             "policy": ""
           },
-          "count": {
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "update": {
             "enabled": false,
             "policy": ""
           }
         }
       }
     },
-    "email": {
+    "upload": {
       "controllers": {
-        "email": {
+        "upload": {
+          "count": {
+            "enabled": false,
+            "policy": ""
+          },
+          "search": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findone": {
+            "enabled": false,
+            "policy": ""
+          },
+          "upload": {
+            "enabled": false,
+            "policy": ""
+          },
           "getsettings": {
             "enabled": false,
             "policy": ""
           },
+          "updatesettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "destroy": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {
+        "description": {
+          "short": "Media file management.",
+          "long": "Media file management."
+        },
+        "id": "upload",
+        "icon": "cloud-upload-alt",
+        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-upload/admin/src/assets/images/logo.svg?sanitize=true",
+        "isCompatible": true,
+        "name": "Media Library",
+        "price": 0,
+        "ratings": 5,
+        "registry": "https://registry.npmjs.org/"
+      }
+    },
+    "email": {
+      "controllers": {
+        "email": {
           "send": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getsettings": {
             "enabled": false,
             "policy": ""
           },
@@ -549,6 +530,25 @@
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
       }
+    },
+    "config-sync": {
+      "controllers": {
+        "config": {
+          "getdiff": {
+            "enabled": false,
+            "policy": ""
+          },
+          "importall": {
+            "enabled": false,
+            "policy": ""
+          },
+          "exportall": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
     }
   }
 }

@@ -12,10 +12,10 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models.photo });
   },
 
-  async generateUploadUrls(ctx) {
+  async createPresignedUploadUrls(ctx) {
     const { user } = ctx.state;
-    const { uploadsSize } = ctx.request.body;
-    const result = [];
+    const { uploadsLength } = ctx.request.body;
+    const s3Promises = [];
 
     const s3 = new S3Client({
       region: 'eu-central-1',
@@ -25,8 +25,8 @@ module.exports = {
       },
     });
 
-    for (let i = 0; i < uploadsSize; i++) {
-      result.push(
+    for (let i = 0; i < uploadsLength; i++) {
+      s3Promises.push(
         createPresignedPost(s3, {
           Bucket: process.env.S3_UPLOAD_BUCKET,
           Key: `${user.id}--${new Date().toISOString()}--${i + 1}.jpg`,
@@ -36,6 +36,6 @@ module.exports = {
       );
     }
 
-    return Promise.all(result);
+    return Promise.all(s3Promises);
   },
 };
