@@ -23,11 +23,26 @@
         "model": "user",
         "via": "photos"
       },
-      "s3key": {
+      "s3Key": {
         "type": "string",
         "required": true,
         "unique": true,
-        "private": false
+        "private": true
+      },
+      "latitude": {
+        "type": "decimal"
+      },
+      "longitude": {
+        "type": "decimal"
+      },
+      "altitude": {
+        "type": "integer"
+      },
+      "bearing": {
+        "type": "integer"
+      },
+      "dateOriginal": {
+        "type": "string"
       },
       "created_by": {
         "model": "user",

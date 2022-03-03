@@ -35,16 +35,86 @@
           "sortable": true
         }
       },
-      "s3key": {
+      "s3Key": {
         "edit": {
-          "label": "S3key",
+          "label": "S3Key",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "S3key",
+          "label": "S3Key",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "latitude": {
+        "edit": {
+          "label": "Latitude",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Latitude",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "longitude": {
+        "edit": {
+          "label": "Longitude",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Longitude",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "altitude": {
+        "edit": {
+          "label": "Altitude",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Altitude",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "bearing": {
+        "edit": {
+          "label": "Bearing",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Bearing",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "dateOriginal": {
+        "edit": {
+          "label": "DateOriginal",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "DateOriginal",
           "searchable": true,
           "sortable": true
         }
@@ -88,7 +158,31 @@
       "edit": [
         [
           {
-            "name": "s3key",
+            "name": "s3Key",
+            "size": 6
+          },
+          {
+            "name": "latitude",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "longitude",
+            "size": 4
+          },
+          {
+            "name": "altitude",
+            "size": 4
+          },
+          {
+            "name": "bearing",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "dateOriginal",
             "size": 6
           }
         ]

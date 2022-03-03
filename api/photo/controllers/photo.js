@@ -1,6 +1,7 @@
 const { sanitizeEntity } = require('strapi-utils');
 const { S3Client } = require('@aws-sdk/client-s3');
 const { createPresignedPost } = require('@aws-sdk/s3-presigned-post');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
   async create(ctx) {
@@ -13,11 +14,11 @@ module.exports = {
   },
 
   async createPresignedUploadUrls(ctx) {
-    const { user } = ctx.state;
     const { uploadsLength } = ctx.request.body;
-    const s3Promises = [];
+    const { user } = ctx.state;
+    const promises = [];
 
-    const s3 = new S3Client({
+    const s3Client = new S3Client({
       region: 'eu-central-1',
       credentials: {
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -26,16 +27,24 @@ module.exports = {
     });
 
     for (let i = 0; i < uploadsLength; i++) {
-      s3Promises.push(
-        createPresignedPost(s3, {
-          Bucket: process.env.S3_UPLOAD_BUCKET,
-          Key: `${user.id}--${new Date().toISOString()}--${i + 1}.jpg`,
-          Fields: { 'Content-Type': 'image/jpeg' },
-          Conditions: [['content-length-range', 0, 50 * 1024 * 1024]],
+      const s3uuid = uuidv4();
+      promises.push(
+        new Promise((resolve) => {
+          createPresignedPost(s3Client, {
+            Bucket: process.env.S3_UPLOAD_BUCKET,
+            Key: `${user.id}/${s3uuid}.jpg`,
+            Fields: { 'Content-Type': 'image/jpeg' },
+            Conditions: [['content-length-range', 0, 50 * 1024 * 1024]],
+          }).then((presignedPost) => {
+            resolve({
+              presignedPost,
+              s3uuid,
+            });
+          });
         }),
       );
     }
 
-    return Promise.all(s3Promises);
+    return Promise.all(promises);
   },
 };
