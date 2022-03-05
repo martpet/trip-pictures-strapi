@@ -17,26 +17,31 @@
       "model": "user",
       "via": "photos"
     },
-    "s3Key": {
+    "latitude": {
+      "type": "float",
+      "required": true
+    },
+    "longitude": {
+      "type": "float",
+      "required": true
+    },
+    "altitude": {
+      "type": "integer",
+      "required": true
+    },
+    "bearing": {
+      "type": "integer",
+      "required": true
+    },
+    "dateOriginal": {
+      "type": "string",
+      "required": true
+    },
+    "s3uuid": {
       "type": "string",
       "required": true,
       "unique": true,
       "private": true
-    },
-    "latitude": {
-      "type": "decimal"
-    },
-    "longitude": {
-      "type": "decimal"
-    },
-    "altitude": {
-      "type": "integer"
-    },
-    "bearing": {
-      "type": "integer"
-    },
-    "dateOriginal": {
-      "type": "string"
     }
   }
 }
