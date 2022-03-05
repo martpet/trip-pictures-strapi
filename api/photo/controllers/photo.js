@@ -13,17 +13,43 @@ module.exports = {
         }),
       ),
     );
-    return entities.map((entity) =>
-      sanitizeEntity(entity, { model: strapi.models.photo }),
-    );
+    return entities.map((entity) => ({
+      ...sanitizeEntity(entity, { model: strapi.models.photo }),
+      url: strapi.services.photo.getUrl(ctx.state.user.id, entity.s3uuid),
+    }));
+  },
+
+  async update(ctx) {
+    const { id } = ctx.params;
+    const [photo] = await strapi.services.photo.find({
+      id: ctx.params.id,
+      'user.id': ctx.state.user.id,
+    });
+    if (!photo) {
+      return ctx.unauthorized(`You can't update this entry`);
+    }
+    const entity = await strapi.services.photo.update({ id }, ctx.request.body);
+    return sanitizeEntity(entity, { model: strapi.models.photo });
+  },
+
+  async delete(ctx) {
+    const { id } = ctx.params;
+    const [photo] = await strapi.services.photo.find({
+      id: ctx.params.id,
+      'user.id': ctx.state.user.id,
+    });
+    if (!photo) {
+      return ctx.unauthorized(`You can't update this entry`);
+    }
+    const entity = await strapi.services.photo.delete({ id });
+    return sanitizeEntity(entity, { model: strapi.models.photo });
   },
 
   async createPresignedUploadUrls(ctx) {
     const { uploadsLength } = ctx.request.body;
-    const { user } = ctx.state;
     const promises = [];
     const s3Client = new S3Client({
-      region: 'eu-central-1',
+      region: process.env.S3_REGION,
       credentials: {
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -35,7 +61,7 @@ module.exports = {
         new Promise((resolve) => {
           createPresignedPost(s3Client, {
             Bucket: process.env.S3_UPLOAD_BUCKET,
-            Key: createS3Key(user.id, s3uuid),
+            Key: strapi.services.photo.getS3Key(ctx.state.user.id, s3uuid),
             Fields: { 'Content-Type': 'image/jpeg' },
             Conditions: [['content-length-range', 0, 50 * 1024 * 1024]],
           }).then((presignedPost) => {
@@ -50,7 +76,3 @@ module.exports = {
     return Promise.all(promises);
   },
 };
-
-function createS3Key(userId, uuid) {
-  return `${userId}/${uuid}.jpg`;
-}
