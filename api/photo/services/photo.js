@@ -1,9 +1,10 @@
 module.exports = {
   getUrl(userId, s3uuid) {
-    const bucket = process.env.S3_UPLOAD_BUCKET;
-    const region = process.env.S3_REGION;
-    const key = strapi.services.photo.getS3Key(userId, s3uuid);
-    return `https://${bucket}.s3.${region}.amazonaws.com/${key}`;
+    const imageRequest = JSON.stringify({
+      bucket: process.env.S3_UPLOAD_BUCKET,
+      key: strapi.services.photo.getS3Key(userId, s3uuid),
+    });
+    return `${process.env.IMAGE_HANDLER_API_ENDPOINT}/${btoa(imageRequest)}`;
   },
 
   getS3Key(userId, s3uuid) {
