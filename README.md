@@ -11,8 +11,8 @@
 - `npm install`
 
 ### Env vars
-- Copy *.env.example* as *.env*,
-- ask for AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+- Copy *.env* file in project folder,
+- ask for your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and add them to *.env*.
 
 ### Dev server
 - Start it with `npm run develop`

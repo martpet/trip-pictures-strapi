@@ -2,6 +2,7 @@ const { sanitizeEntity } = require('strapi-utils');
 const { S3Client } = require('@aws-sdk/client-s3');
 const { createPresignedPost } = require('@aws-sdk/s3-presigned-post');
 const { v4: uuidv4 } = require('uuid');
+const { photosUploadBucket } = require('../../../consts');
 
 module.exports = {
   async create(ctx) {
@@ -49,7 +50,7 @@ module.exports = {
     const { uploadsLength } = ctx.request.body;
     const promises = [];
     const s3Client = new S3Client({
-      region: process.env.S3_REGION,
+      region: 'eu-central-1',
       credentials: {
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -60,7 +61,7 @@ module.exports = {
       promises.push(
         new Promise((resolve) => {
           createPresignedPost(s3Client, {
-            Bucket: process.env.S3_UPLOAD_BUCKET,
+            Bucket: photosUploadBucket,
             Key: strapi.services.photo.getS3Key(ctx.state.user.id, s3uuid),
             Fields: { 'Content-Type': 'image/jpeg' },
             Conditions: [['content-length-range', 0, 50 * 1024 * 1024]],
