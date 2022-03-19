@@ -151,9 +151,9 @@
     "layouts": {
       "list": [
         "id",
+        "user",
         "created_at",
-        "updated_at",
-        "user"
+        "updated_at"
       ],
       "edit": [
         [

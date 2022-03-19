@@ -5,6 +5,14 @@ const { v4: uuidv4 } = require('uuid');
 const { photosUploadBucket } = require('../../../consts');
 
 module.exports = {
+  async find(ctx) {
+    const entities = await strapi.services.photo.find(ctx.query);
+    return entities.map((entity) => ({
+      ...sanitizeEntity(entity, { model: strapi.models.photo }),
+      url: strapi.services.photo.getUrl(ctx.state.user.id, entity.s3uuid),
+    }));
+  },
+
   async create(ctx) {
     const entities = await Promise.all(
       ctx.request.body.map((item) =>

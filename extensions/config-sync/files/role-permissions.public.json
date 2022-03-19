@@ -6,19 +6,7 @@
     "users-permissions": {
       "controllers": {
         "user": {
-          "create": {
-            "enabled": false,
-            "policy": ""
-          },
-          "count": {
-            "enabled": false,
-            "policy": ""
-          },
           "update": {
-            "enabled": false,
-            "policy": ""
-          },
-          "destroy": {
             "enabled": false,
             "policy": ""
           },
@@ -27,6 +15,10 @@
             "policy": ""
           },
           "findone": {
+            "enabled": false,
+            "policy": ""
+          },
+          "destroy": {
             "enabled": false,
             "policy": ""
           },
@@ -41,14 +33,18 @@
           "me": {
             "enabled": false,
             "policy": ""
+          },
+          "count": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
           }
         },
         "auth": {
           "connect": {
-            "enabled": true,
-            "policy": ""
-          },
-          "resetpassword": {
             "enabled": true,
             "policy": ""
           },
@@ -60,8 +56,8 @@
             "enabled": true,
             "policy": ""
           },
-          "sendemailconfirmation": {
-            "enabled": false,
+          "resetpassword": {
+            "enabled": true,
             "policy": ""
           },
           "callback": {
@@ -71,18 +67,14 @@
           "register": {
             "enabled": true,
             "policy": ""
+          },
+          "sendemailconfirmation": {
+            "enabled": false,
+            "policy": ""
           }
         },
         "userspermissions": {
-          "getproviders": {
-            "enabled": false,
-            "policy": ""
-          },
           "getroutes": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createrole": {
             "enabled": false,
             "policy": ""
           },
@@ -90,15 +82,11 @@
             "enabled": false,
             "policy": ""
           },
-          "getrole": {
-            "enabled": false,
-            "policy": ""
-          },
           "getpermissions": {
             "enabled": false,
             "policy": ""
           },
-          "deleterole": {
+          "getrole": {
             "enabled": false,
             "policy": ""
           },
@@ -130,11 +118,23 @@
             "enabled": false,
             "policy": ""
           },
+          "getproviders": {
+            "enabled": false,
+            "policy": ""
+          },
           "getpolicies": {
             "enabled": false,
             "policy": ""
           },
+          "createrole": {
+            "enabled": false,
+            "policy": ""
+          },
           "getadvancedsettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deleterole": {
             "enabled": false,
             "policy": ""
           }
@@ -157,28 +157,6 @@
     },
     "content-manager": {
       "controllers": {
-        "single-types": {
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createorupdate": {
-            "enabled": false,
-            "policy": ""
-          },
-          "unpublish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "publish": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
         "components": {
           "findcomponentconfiguration": {
             "enabled": false,
@@ -189,6 +167,28 @@
             "policy": ""
           },
           "updatecomponentconfiguration": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "single-types": {
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "unpublish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "publish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createorupdate": {
+            "enabled": false,
+            "policy": ""
+          },
+          "delete": {
             "enabled": false,
             "policy": ""
           }
@@ -214,11 +214,11 @@
             "enabled": false,
             "policy": ""
           },
-          "publish": {
+          "update": {
             "enabled": false,
             "policy": ""
           },
-          "update": {
+          "publish": {
             "enabled": false,
             "policy": ""
           },
@@ -233,16 +233,6 @@
         },
         "relations": {
           "find": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "uid": {
-          "generateuid": {
-            "enabled": false,
-            "policy": ""
-          },
-          "checkuidavailability": {
             "enabled": false,
             "policy": ""
           }
@@ -264,6 +254,16 @@
             "enabled": false,
             "policy": ""
           }
+        },
+        "uid": {
+          "checkuidavailability": {
+            "enabled": false,
+            "policy": ""
+          },
+          "generateuid": {
+            "enabled": false,
+            "policy": ""
+          }
         }
       },
       "information": {
@@ -279,172 +279,6 @@
         "price": 0,
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "content-type-builder": {
-      "controllers": {
-        "components": {
-          "updatecomponent": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getcomponent": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getcomponents": {
-            "enabled": false,
-            "policy": ""
-          },
-          "deletecomponent": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createcomponent": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "componentcategories": {
-          "editcategory": {
-            "enabled": false,
-            "policy": ""
-          },
-          "deletecategory": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "contenttypes": {
-          "deletecontenttype": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatecontenttype": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getcontenttypes": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getcontenttype": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createcontenttype": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "connections": {
-          "getconnections": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "builder": {
-          "getreservednames": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {
-        "description": {
-          "short": "Modelize the data structure of your API.",
-          "long": "Modelize the data structure of your API. Create new fields and relations in just a minute. The files are automatically created and updated in your project."
-        },
-        "id": "content-type-builder",
-        "icon": "paint-brush",
-        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-content-type-builder/admin/src/assets/images/logo.svg?sanitize=true",
-        "isCompatible": true,
-        "name": "Content Type Builder",
-        "price": 0,
-        "ratings": 5,
-        "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "i18n": {
-      "controllers": {
-        "content-types": {
-          "getnonlocalizedattributes": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "iso-locales": {
-          "listisolocales": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "locales": {
-          "listlocales": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatelocale": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createlocale": {
-            "enabled": false,
-            "policy": ""
-          },
-          "deletelocale": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {
-        "description": {
-          "short": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API.",
-          "long": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API."
-        },
-        "id": "i18n",
-        "icon": "round-language",
-        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-i18n/admin/src/assets/images/logo.svg?sanitize=true",
-        "isCompatible": true,
-        "name": "Internationalization",
-        "price": 0,
-        "ratings": 5,
-        "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "application": {
-      "controllers": {
-        "photo": {
-          "createpresigneduploadurls": {
-            "enabled": false,
-            "policy": ""
-          },
-          "create": {
-            "enabled": false,
-            "policy": ""
-          },
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "count": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "update": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
       }
     },
     "upload": {
@@ -499,6 +333,40 @@
         "registry": "https://registry.npmjs.org/"
       }
     },
+    "application": {
+      "controllers": {
+        "photo": {
+          "findone": {
+            "enabled": false,
+            "policy": ""
+          },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "count": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": true,
+            "policy": ""
+          },
+          "createpresigneduploadurls": {
+            "enabled": false,
+            "policy": ""
+          },
+          "update": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      }
+    },
     "email": {
       "controllers": {
         "email": {
@@ -526,6 +394,138 @@
         "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-email/admin/src/assets/images/logo.svg?sanitize=true",
         "isCompatible": true,
         "name": "Email",
+        "price": 0,
+        "ratings": 5,
+        "registry": "https://registry.npmjs.org/"
+      }
+    },
+    "content-type-builder": {
+      "controllers": {
+        "contenttypes": {
+          "updatecontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletecontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcontenttypes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createcontenttype": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "componentcategories": {
+          "editcategory": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletecategory": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "connections": {
+          "getconnections": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "builder": {
+          "getreservednames": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "components": {
+          "getcomponent": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcomponents": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletecomponent": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createcomponent": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecomponent": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {
+        "description": {
+          "short": "Modelize the data structure of your API.",
+          "long": "Modelize the data structure of your API. Create new fields and relations in just a minute. The files are automatically created and updated in your project."
+        },
+        "id": "content-type-builder",
+        "icon": "paint-brush",
+        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-content-type-builder/admin/src/assets/images/logo.svg?sanitize=true",
+        "isCompatible": true,
+        "name": "Content Type Builder",
+        "price": 0,
+        "ratings": 5,
+        "registry": "https://registry.npmjs.org/"
+      }
+    },
+    "i18n": {
+      "controllers": {
+        "iso-locales": {
+          "listisolocales": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "locales": {
+          "listlocales": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatelocale": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createlocale": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletelocale": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "content-types": {
+          "getnonlocalizedattributes": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {
+        "description": {
+          "short": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API.",
+          "long": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API."
+        },
+        "id": "i18n",
+        "icon": "round-language",
+        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-i18n/admin/src/assets/images/logo.svg?sanitize=true",
+        "isCompatible": true,
+        "name": "Internationalization",
         "price": 0,
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"

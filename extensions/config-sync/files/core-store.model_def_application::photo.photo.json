@@ -14,21 +14,26 @@
         "created_at",
         "updated_at"
       ],
-      "draftAndPublish": false
+      "draftAndPublish": false,
+      "privateAttributes": [
+        "created_at",
+        "updated_at"
+      ]
     },
     "pluginOptions": {},
     "attributes": {
       "user": {
         "plugin": "users-permissions",
         "model": "user",
-        "via": "photos"
+        "via": "photos",
+        "autoPopulate": false
       },
       "latitude": {
-        "type": "decimal",
+        "type": "float",
         "required": true
       },
       "longitude": {
-        "type": "decimal",
+        "type": "float",
         "required": true
       },
       "altitude": {
@@ -41,7 +46,8 @@
       },
       "dateOriginal": {
         "type": "string",
-        "required": true
+        "required": true,
+        "autoPopulate": false
       },
       "s3uuid": {
         "type": "string",
