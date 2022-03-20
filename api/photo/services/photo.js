@@ -6,7 +6,7 @@ module.exports = {
       bucket: process.env.S3_UPLOAD_BUCKET,
       key: strapi.services.photo.getS3Key(userId, s3uuid),
     });
-    return `${imageHandlerEndpoint}/${btoa(imageRequest)}`;
+    return `${imageHandlerEndpoint}/${Buffer.from(imageRequest, 'base64')}`;
   },
 
   getS3Key(userId, s3uuid) {
