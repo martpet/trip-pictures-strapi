@@ -9,7 +9,7 @@ module.exports = {
     const entities = await strapi.services.photo.find(ctx.query);
     return entities.map((entity) => ({
       ...sanitizeEntity(entity, { model: strapi.models.photo }),
-      url: strapi.services.photo.getUrl(ctx.state.user.id, entity.s3uuid),
+      url: strapi.services.photo.getUrl(entity.user, entity.s3uuid),
     }));
   },
 
