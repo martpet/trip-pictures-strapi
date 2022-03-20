@@ -61,7 +61,10 @@
         "assert": "either"
       }
     ],
+    "no-new": 0,
     "no-param-reassign": 0,
+    "no-plusplus": "off",
+    "no-use-before-define": 0,
     "prettier/prettier": [
       2,
       {},
@@ -81,8 +84,7 @@
     "react/jsx-sort-props": 1,
     "react/react-in-jsx-scope": 0,
     "simple-import-sort/exports": 2,
-    "simple-import-sort/imports": 2,
-    "no-new": 0
+    "simple-import-sort/imports": 2
   },
   "settings": {
     "json/json-with-comments-files": [],

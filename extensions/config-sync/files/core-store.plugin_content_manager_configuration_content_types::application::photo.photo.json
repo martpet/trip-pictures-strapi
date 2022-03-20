@@ -35,16 +35,86 @@
           "sortable": true
         }
       },
-      "s3key": {
+      "latitude": {
         "edit": {
-          "label": "S3key",
+          "label": "Latitude",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "S3key",
+          "label": "Latitude",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "longitude": {
+        "edit": {
+          "label": "Longitude",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Longitude",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "altitude": {
+        "edit": {
+          "label": "Altitude",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Altitude",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "bearing": {
+        "edit": {
+          "label": "Bearing",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Bearing",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "dateOriginal": {
+        "edit": {
+          "label": "DateOriginal",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "DateOriginal",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "s3uuid": {
+        "edit": {
+          "label": "S3uuid",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "S3uuid",
           "searchable": true,
           "sortable": true
         }
@@ -81,14 +151,38 @@
     "layouts": {
       "list": [
         "id",
+        "user",
         "created_at",
-        "updated_at",
-        "user"
+        "updated_at"
       ],
       "edit": [
         [
           {
-            "name": "s3key",
+            "name": "latitude",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "longitude",
+            "size": 4
+          },
+          {
+            "name": "altitude",
+            "size": 4
+          },
+          {
+            "name": "bearing",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "dateOriginal",
+            "size": 6
+          },
+          {
+            "name": "s3uuid",
             "size": 6
           }
         ]

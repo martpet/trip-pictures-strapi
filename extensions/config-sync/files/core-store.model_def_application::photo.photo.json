@@ -14,20 +14,46 @@
         "created_at",
         "updated_at"
       ],
-      "draftAndPublish": false
+      "draftAndPublish": false,
+      "privateAttributes": [
+        "created_at",
+        "updated_at"
+      ]
     },
     "pluginOptions": {},
     "attributes": {
       "user": {
         "plugin": "users-permissions",
         "model": "user",
-        "via": "photos"
+        "via": "photos",
+        "autoPopulate": false
       },
-      "s3key": {
+      "latitude": {
+        "type": "float",
+        "required": true
+      },
+      "longitude": {
+        "type": "float",
+        "required": true
+      },
+      "altitude": {
+        "type": "integer",
+        "required": true
+      },
+      "bearing": {
+        "type": "integer",
+        "required": true
+      },
+      "dateOriginal": {
+        "type": "string",
+        "required": true,
+        "autoPopulate": false
+      },
+      "s3uuid": {
         "type": "string",
         "required": true,
         "unique": true,
-        "private": false
+        "private": true
       },
       "created_by": {
         "model": "user",

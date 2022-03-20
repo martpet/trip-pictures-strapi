@@ -3,8 +3,240 @@
   "description": "Default role given to unauthenticated user.",
   "type": "public",
   "permissions": {
+    "users-permissions": {
+      "controllers": {
+        "user": {
+          "update": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findone": {
+            "enabled": false,
+            "policy": ""
+          },
+          "destroy": {
+            "enabled": false,
+            "policy": ""
+          },
+          "savemysettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "destroyall": {
+            "enabled": false,
+            "policy": ""
+          },
+          "me": {
+            "enabled": false,
+            "policy": ""
+          },
+          "count": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "auth": {
+          "connect": {
+            "enabled": true,
+            "policy": ""
+          },
+          "forgotpassword": {
+            "enabled": true,
+            "policy": ""
+          },
+          "emailconfirmation": {
+            "enabled": true,
+            "policy": ""
+          },
+          "resetpassword": {
+            "enabled": true,
+            "policy": ""
+          },
+          "callback": {
+            "enabled": true,
+            "policy": ""
+          },
+          "register": {
+            "enabled": true,
+            "policy": ""
+          },
+          "sendemailconfirmation": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "userspermissions": {
+          "getroutes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "searchusers": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getpermissions": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getrole": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updateadvancedsettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updateemailtemplate": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getemailtemplate": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getroles": {
+            "enabled": false,
+            "policy": ""
+          },
+          "index": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updaterole": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updateproviders": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getproviders": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getpolicies": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createrole": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getadvancedsettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deleterole": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {
+        "description": {
+          "short": "Protect your API with a full authentication process based on JWT.",
+          "long": "Protect your API with a full authentication process based on JWT. This plugin comes also with an ACL strategy that allows you to manage the permissions between the groups of users."
+        },
+        "id": "users-permissions",
+        "icon": "users",
+        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-users-permissions/admin/src/assets/images/logo.svg?sanitize=true",
+        "isCompatible": true,
+        "name": "Roles & Permissions",
+        "price": 0,
+        "ratings": 5,
+        "registry": "https://registry.npmjs.org/"
+      }
+    },
     "content-manager": {
       "controllers": {
+        "components": {
+          "findcomponentconfiguration": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findcomponents": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecomponentconfiguration": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "single-types": {
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "unpublish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "publish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createorupdate": {
+            "enabled": false,
+            "policy": ""
+          },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "collection-types": {
+          "previewmanyrelations": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
+          },
+          "unpublish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "update": {
+            "enabled": false,
+            "policy": ""
+          },
+          "publish": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findone": {
+            "enabled": false,
+            "policy": ""
+          },
+          "bulkdelete": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "relations": {
+          "find": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
         "content-types": {
           "findcontenttypessettings": {
             "enabled": false,
@@ -23,92 +255,12 @@
             "policy": ""
           }
         },
-        "collection-types": {
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "bulkdelete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "update": {
-            "enabled": false,
-            "policy": ""
-          },
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "publish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "previewmanyrelations": {
-            "enabled": false,
-            "policy": ""
-          },
-          "unpublish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "create": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "single-types": {
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "publish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "unpublish": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createorupdate": {
-            "enabled": false,
-            "policy": ""
-          },
-          "find": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "components": {
-          "findcomponents": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findcomponentconfiguration": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatecomponentconfiguration": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
         "uid": {
           "checkuidavailability": {
             "enabled": false,
             "policy": ""
           },
           "generateuid": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "relations": {
-          "find": {
             "enabled": false,
             "policy": ""
           }
@@ -132,15 +284,7 @@
     "upload": {
       "controllers": {
         "upload": {
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatesettings": {
+          "count": {
             "enabled": false,
             "policy": ""
           },
@@ -148,11 +292,11 @@
             "enabled": false,
             "policy": ""
           },
-          "count": {
+          "findone": {
             "enabled": false,
             "policy": ""
           },
-          "destroy": {
+          "upload": {
             "enabled": false,
             "policy": ""
           },
@@ -160,7 +304,15 @@
             "enabled": false,
             "policy": ""
           },
-          "upload": {
+          "updatesettings": {
+            "enabled": false,
+            "policy": ""
+          },
+          "destroy": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
             "enabled": false,
             "policy": ""
           }
@@ -181,313 +333,10 @@
         "registry": "https://registry.npmjs.org/"
       }
     },
-    "config-sync": {
-      "controllers": {
-        "config": {
-          "exportall": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getdiff": {
-            "enabled": false,
-            "policy": ""
-          },
-          "importall": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {}
-    },
-    "users-permissions": {
-      "controllers": {
-        "auth": {
-          "forgotpassword": {
-            "enabled": true,
-            "policy": ""
-          },
-          "emailconfirmation": {
-            "enabled": true,
-            "policy": ""
-          },
-          "register": {
-            "enabled": true,
-            "policy": ""
-          },
-          "sendemailconfirmation": {
-            "enabled": false,
-            "policy": ""
-          },
-          "callback": {
-            "enabled": true,
-            "policy": ""
-          },
-          "resetpassword": {
-            "enabled": true,
-            "policy": ""
-          },
-          "connect": {
-            "enabled": true,
-            "policy": ""
-          }
-        },
-        "user": {
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "destroy": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "me": {
-            "enabled": false,
-            "policy": ""
-          },
-          "savemysettings": {
-            "enabled": false,
-            "policy": ""
-          },
-          "destroyall": {
-            "enabled": false,
-            "policy": ""
-          },
-          "update": {
-            "enabled": false,
-            "policy": ""
-          },
-          "create": {
-            "enabled": false,
-            "policy": ""
-          },
-          "count": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "userspermissions": {
-          "getpermissions": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updateadvancedsettings": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getroutes": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updateemailtemplate": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createrole": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getrole": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updateproviders": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getproviders": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getemailtemplate": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getroles": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getpolicies": {
-            "enabled": false,
-            "policy": ""
-          },
-          "searchusers": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getadvancedsettings": {
-            "enabled": false,
-            "policy": ""
-          },
-          "deleterole": {
-            "enabled": false,
-            "policy": ""
-          },
-          "index": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updaterole": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {
-        "description": {
-          "short": "Protect your API with a full authentication process based on JWT.",
-          "long": "Protect your API with a full authentication process based on JWT. This plugin comes also with an ACL strategy that allows you to manage the permissions between the groups of users."
-        },
-        "id": "users-permissions",
-        "icon": "users",
-        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-users-permissions/admin/src/assets/images/logo.svg?sanitize=true",
-        "isCompatible": true,
-        "name": "Roles & Permissions",
-        "price": 0,
-        "ratings": 5,
-        "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "content-type-builder": {
-      "controllers": {
-        "contenttypes": {
-          "getcontenttypes": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createcontenttype": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatecontenttype": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getcontenttype": {
-            "enabled": false,
-            "policy": ""
-          },
-          "deletecontenttype": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "components": {
-          "getcomponent": {
-            "enabled": false,
-            "policy": ""
-          },
-          "deletecomponent": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createcomponent": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatecomponent": {
-            "enabled": false,
-            "policy": ""
-          },
-          "getcomponents": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "connections": {
-          "getconnections": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "builder": {
-          "getreservednames": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "componentcategories": {
-          "deletecategory": {
-            "enabled": false,
-            "policy": ""
-          },
-          "editcategory": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {
-        "description": {
-          "short": "Modelize the data structure of your API.",
-          "long": "Modelize the data structure of your API. Create new fields and relations in just a minute. The files are automatically created and updated in your project."
-        },
-        "id": "content-type-builder",
-        "icon": "paint-brush",
-        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-content-type-builder/admin/src/assets/images/logo.svg?sanitize=true",
-        "isCompatible": true,
-        "name": "Content Type Builder",
-        "price": 0,
-        "ratings": 5,
-        "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "i18n": {
-      "controllers": {
-        "locales": {
-          "deletelocale": {
-            "enabled": false,
-            "policy": ""
-          },
-          "updatelocale": {
-            "enabled": false,
-            "policy": ""
-          },
-          "listlocales": {
-            "enabled": false,
-            "policy": ""
-          },
-          "createlocale": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "content-types": {
-          "getnonlocalizedattributes": {
-            "enabled": false,
-            "policy": ""
-          }
-        },
-        "iso-locales": {
-          "listisolocales": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {
-        "description": {
-          "short": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API.",
-          "long": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API."
-        },
-        "id": "i18n",
-        "icon": "round-language",
-        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-i18n/admin/src/assets/images/logo.svg?sanitize=true",
-        "isCompatible": true,
-        "name": "Internationalization",
-        "price": 0,
-        "ratings": 5,
-        "registry": "https://registry.npmjs.org/"
-      }
-    },
     "application": {
       "controllers": {
         "photo": {
-          "update": {
+          "findone": {
             "enabled": false,
             "policy": ""
           },
@@ -495,7 +344,7 @@
             "enabled": false,
             "policy": ""
           },
-          "generateuploadurl": {
+          "count": {
             "enabled": false,
             "policy": ""
           },
@@ -504,14 +353,14 @@
             "policy": ""
           },
           "find": {
+            "enabled": true,
+            "policy": ""
+          },
+          "createpresigneduploadurls": {
             "enabled": false,
             "policy": ""
           },
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "count": {
+          "update": {
             "enabled": false,
             "policy": ""
           }
@@ -521,11 +370,11 @@
     "email": {
       "controllers": {
         "email": {
-          "getsettings": {
+          "send": {
             "enabled": false,
             "policy": ""
           },
-          "send": {
+          "getsettings": {
             "enabled": false,
             "policy": ""
           },
@@ -549,6 +398,157 @@
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
       }
+    },
+    "content-type-builder": {
+      "controllers": {
+        "contenttypes": {
+          "updatecontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletecontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcontenttypes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcontenttype": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createcontenttype": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "componentcategories": {
+          "editcategory": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletecategory": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "connections": {
+          "getconnections": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "builder": {
+          "getreservednames": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "components": {
+          "getcomponent": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcomponents": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletecomponent": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createcomponent": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecomponent": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {
+        "description": {
+          "short": "Modelize the data structure of your API.",
+          "long": "Modelize the data structure of your API. Create new fields and relations in just a minute. The files are automatically created and updated in your project."
+        },
+        "id": "content-type-builder",
+        "icon": "paint-brush",
+        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-content-type-builder/admin/src/assets/images/logo.svg?sanitize=true",
+        "isCompatible": true,
+        "name": "Content Type Builder",
+        "price": 0,
+        "ratings": 5,
+        "registry": "https://registry.npmjs.org/"
+      }
+    },
+    "i18n": {
+      "controllers": {
+        "iso-locales": {
+          "listisolocales": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "locales": {
+          "listlocales": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatelocale": {
+            "enabled": false,
+            "policy": ""
+          },
+          "createlocale": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deletelocale": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "content-types": {
+          "getnonlocalizedattributes": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {
+        "description": {
+          "short": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API.",
+          "long": "This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API."
+        },
+        "id": "i18n",
+        "icon": "round-language",
+        "logo": "https://raw.githubusercontent.com/strapi/strapi/v3.6.8/packages/strapi-plugin-i18n/admin/src/assets/images/logo.svg?sanitize=true",
+        "isCompatible": true,
+        "name": "Internationalization",
+        "price": 0,
+        "ratings": 5,
+        "registry": "https://registry.npmjs.org/"
+      }
+    },
+    "config-sync": {
+      "controllers": {
+        "config": {
+          "getdiff": {
+            "enabled": false,
+            "policy": ""
+          },
+          "importall": {
+            "enabled": false,
+            "policy": ""
+          },
+          "exportall": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
     }
   }
 }

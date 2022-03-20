@@ -122,7 +122,9 @@ const connect = (provider, query) => {
 };
 
 const buildRedirectUri = (provider = '') =>
-  `${process.env.FRONTEND_APP_URL}/api/connect/${provider}/callback`;
+  `${
+    process.env.FRONTEND_APP_URL || 'http://localhost:3001'
+  }/api/connect/${provider}/callback`;
 
 module.exports = {
   buildRedirectUri,
