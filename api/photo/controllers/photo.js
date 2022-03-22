@@ -14,49 +14,57 @@ module.exports = {
   },
 
   async create(ctx) {
-    const entities = await Promise.all(
-      ctx.request.body.map((item) =>
-        strapi.services.photo.create({
-          ...item,
-          user: ctx.state.user.id,
-        }),
-      ),
-    );
+    const newEntitiesPromises = [];
+    const oldEntitiesPromises = [];
+
+    ctx.request.body.forEach(({ s3uuid, exif, duplicatePhotoId }) => {
+      if (duplicatePhotoId) {
+        oldEntitiesPromises.push(strapi.query('photo').findOne({ id: duplicatePhotoId }));
+      } else {
+        newEntitiesPromises.push(
+          strapi.services.photo.create({ s3uuid, ...exif, user: ctx.state.user.id }),
+        );
+      }
+    });
+
+    const newEntities = await Promise.all(newEntitiesPromises);
+    const oldEntities = await Promise.all(oldEntitiesPromises);
+    const entities = [...newEntities, ...oldEntities];
+
     return entities.map((entity) => ({
       ...sanitizeEntity(entity, { model: strapi.models.photo }),
       url: strapi.services.photo.getUrl(ctx.state.user.id, entity.s3uuid),
     }));
   },
 
-  async update(ctx) {
-    const { id } = ctx.params;
-    const [photo] = await strapi.services.photo.find({
-      id: ctx.params.id,
-      'user.id': ctx.state.user.id,
-    });
-    if (!photo) {
-      return ctx.unauthorized(`You can't update this entry`);
-    }
-    const entity = await strapi.services.photo.update({ id }, ctx.request.body);
-    return sanitizeEntity(entity, { model: strapi.models.photo });
-  },
+  // async update(ctx) {
+  //   const { id } = ctx.params;
+  //   const [photo] = await strapi.services.photo.find({
+  //     id: ctx.params.id,
+  //     'user.id': ctx.state.user.id,
+  //   });
+  //   if (!photo) {
+  //     return ctx.unauthorized(`You can't update this entry`);
+  //   }
+  //   const entity = await strapi.services.photo.update({ id }, ctx.request.body);
+  //   return sanitizeEntity(entity, { model: strapi.models.photo });
+  // },
 
-  async delete(ctx) {
-    const { id } = ctx.params;
-    const [photo] = await strapi.services.photo.find({
-      id: ctx.params.id,
-      'user.id': ctx.state.user.id,
-    });
-    if (!photo) {
-      return ctx.unauthorized(`You can't update this entry`);
-    }
-    const entity = await strapi.services.photo.delete({ id });
-    return sanitizeEntity(entity, { model: strapi.models.photo });
-  },
+  // async delete(ctx) {
+  //   const { id } = ctx.params;
+  //   const [photo] = await strapi.services.photo.find({
+  //     id: ctx.params.id,
+  //     'user.id': ctx.state.user.id,
+  //   });
+  //   if (!photo) {
+  //     return ctx.unauthorized(`You can't update this entry`);
+  //   }
+  //   const entity = await strapi.services.photo.delete({ id });
+  //   return sanitizeEntity(entity, { model: strapi.models.photo });
+  // },
 
   async createPresignedUploadUrls(ctx) {
-    const { uploadsLength } = ctx.request.body;
-    const promises = [];
+    const uploads = ctx.request.body;
     const s3Client = new S3Client({
       region: 'eu-central-1',
       credentials: {
@@ -64,24 +72,43 @@ module.exports = {
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
       },
     });
-    for (let i = 0; i < uploadsLength; i++) {
+    const duplicatePhotos = await strapi.query('photo').find({
+      user: ctx.state.user.id,
+      dateOriginal_in: uploads.map(({ exif }) => exif.dateOriginal),
+      _limit: uploads.length,
+    });
+
+    const promises = [];
+    uploads.forEach((upload) => {
       const s3uuid = uuidv4();
+      const duplicatePhoto = duplicatePhotos.find(
+        ({ dateOriginal }) => dateOriginal === upload.exif.dateOriginal,
+      );
       promises.push(
-        new Promise((resolve) => {
-          createPresignedPost(s3Client, {
+        (async () => {
+          const presignedPost = await createPresignedPost(s3Client, {
             Bucket: photosUploadBucket,
             Key: strapi.services.photo.getS3Key(ctx.state.user.id, s3uuid),
             Fields: { 'Content-Type': 'image/jpeg' },
             Conditions: [['content-length-range', 0, 50 * 1024 * 1024]],
-          }).then((presignedPost) => {
-            resolve({
-              presignedPost,
-              s3uuid,
-            });
           });
-        }),
+
+          const result = {
+            uploadId: upload.id,
+          };
+
+          if (duplicatePhoto) {
+            result.duplicatePhotoId = duplicatePhoto.id;
+          } else {
+            result.s3uuid = s3uuid;
+            Object.assign(result, presignedPost);
+          }
+
+          return result;
+        })(),
       );
-    }
+    });
+
     return Promise.all(promises);
   },
 };
