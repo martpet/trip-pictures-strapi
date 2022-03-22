@@ -17,10 +17,10 @@
   "pluginOptions": {},
   "attributes": {
     "user": {
+      "autoPopulate": false,
       "plugin": "users-permissions",
       "model": "user",
-      "via": "photos",
-      "autoPopulate": false
+      "via": "photos"
     },
     "latitude": {
       "type": "float",
@@ -32,11 +32,11 @@
     },
     "altitude": {
       "type": "integer",
-      "required": true
+      "required": false
     },
     "bearing": {
       "type": "integer",
-      "required": true
+      "required": false
     },
     "dateOriginal": {
       "type": "string",
